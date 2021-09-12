@@ -13,3 +13,24 @@ input, textarea, button, p, div, section, article, select {
   font-size: 1em;
   margin: 0.5em;
 }
+
+ul {
+  list-style-type: none;
+}
+
+li div {
+  display: flex;
+  align-items: center;
+}
+
+li div input {
+  flex: 0.1;
+}
+
+li div p {
+  flex: 0.9;
+}
+
+.done {
+  text-decoration: line-through;
+}
