@@ -1,0 +1,32 @@
+.addTodo_form {
+  margin: 5em 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.addTodo_input {
+  width: 100%;
+  padding: 18px 70px;
+  border-radius: 15px;
+  background-color: transparent !important;
+  border: 3px solid #32363e;
+  color: #eeeeee;
+  font-size: 1.1rem;
+  outline: none;
+}
+
+.addTodo_btn {
+  position: absolute;
+  left: 1.7em;
+  width: 31px;
+  height: 31px;
+  background: linear-gradient(43.19deg, #e94560 40.63%, #ffe713 184.65%);
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

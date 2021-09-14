@@ -1,12 +1,18 @@
-body {
-  font-family: sans-serif;
+/* body {
   padding: 1em 0;
   font-size: 2em;
   width: 80%;
   margin: 0 auto;
 }
 
-input, textarea, button, p, div, section, article, select {
+input,
+textarea,
+button,
+p,
+div,
+section,
+article,
+select {
   display: block;
   width: 100%;
   font-family: sans-serif;
@@ -33,4 +39,4 @@ li div p {
 
 .done {
   text-decoration: line-through;
-}
+} */

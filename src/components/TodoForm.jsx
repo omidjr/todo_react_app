@@ -1,3 +1,4 @@
+import "./TodoForm.css";
 import {React, useCallback} from 'react'
 
 const TodoForm = ({newTodo, setNewTodo, todos, setTodos}) => {
@@ -21,15 +22,22 @@ const TodoForm = ({newTodo, setNewTodo, todos, setTodos}) => {
 
     return (
         <div>
-            <form onSubmit={formSubmitted}>
-                <label htmlFor="newTodo">Enter a Todo:</label>
+            <form className="addTodo_form" onSubmit={formSubmitted}>
                 <input
+                    className="addTodo_input"
+                    autoComplete="off"
+                    placeholder="Add a Todo..."
                     id="newTodo"
                     name="newTodo"
                     value={newTodo}
                     onChange={onNewTodoChange}
                 />
-                <button>Add Todo</button>
+                <button className="addTodo_btn">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 1V17" stroke="#EEEEEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M1 9H17" stroke="#EEEEEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
             </form>
         </div>
     )
