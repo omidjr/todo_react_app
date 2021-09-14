@@ -1,3 +1,4 @@
+import "./TodoList.css";
 import {React, useCallback} from 'react'
 
 const TodoList = ({todos, setTodos}) => {
@@ -15,19 +16,21 @@ const TodoList = ({todos, setTodos}) => {
         }, [todos]);
 
     return (
-        <div>
+        <div className="todoList">
             <ul>
                 {todos.map((todo, index) => (
-                    <li key={todo.id}>
-                    <div>
-                    <input
-                        type="checkbox"
-                        checked={todo.done}
-                        onChange={todoDone(todo, index)}
-                    />
-                    <p className={todo.done ? 'done' : ''}>{todo.content}</p>
-                    </div>
-                    <button onClick={removeTodo(todo)}>Remove Todo</button>
+                    <li className="todo" key={todo.id}>
+                        <div className="todoCheck">
+                            <input
+                            type="checkbox"
+                            checked={todo.done}
+                            onChange={todoDone(todo, index)}
+                            />
+                        </div>
+                        <div className="todoNameAndActions">
+                            <p className={todo.done ? 'done' : ''}>{todo.content}</p>
+                            <button onClick={removeTodo(todo)}>Remove Todo</button>
+                        </div>
                 </li>
                 ))}
             </ul>
