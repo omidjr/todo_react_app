@@ -1,3 +1,4 @@
+import "./TodoActions.css";
 import {React, useCallback} from 'react'
 
 const TodoActions = ({todos, setTodos}) => {
@@ -17,9 +18,9 @@ const TodoActions = ({todos, setTodos}) => {
         [todos]);
 
     return (
-        <div>
-            <button onClick={markAllDone}>Mark all done</button>
-            <button onClick={deleteAllTodos}>Delete all Todos</button>
+        <div className='todoActions'>
+            <button className='todoActions_done' onClick={markAllDone}>Mark all done</button>
+            <button className='todoActions_delete' onClick={deleteAllTodos}>Delete all Todos</button>
         </div>
     )
 }
