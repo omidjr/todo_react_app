@@ -5,18 +5,24 @@ import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 import TodoActions from "./components/TodoActions";
 import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
 
 const App = () => {
   const newTodo = useNewTodo();
   const todos = useTodos();
 
   return (
-    <div className="App">
+    <div>
       <Navbar />
-      <div className="todoApp">
-        <TodoForm {...newTodo} {...todos}  />
-        <TodoList {...todos} />
-        <TodoActions {...todos} />
+      <div className="App">
+        <Sidebar />
+        <div className="todoApp">
+          <div className="todoApp_inner">
+            <TodoForm {...newTodo} {...todos}  />
+            <TodoList {...todos} />
+            <TodoActions {...todos} />
+          </div>
+        </div>
       </div>
     </div>
   );

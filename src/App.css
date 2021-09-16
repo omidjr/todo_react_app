@@ -12,7 +12,17 @@ body {
   color: #eeeeee;
 }
 
+.App {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .todoApp {
+  flex: 0.83;
+}
+
+.todoApp_inner {
   max-width: 725px;
   margin: 0 auto;
 }
