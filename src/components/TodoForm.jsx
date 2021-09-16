@@ -18,7 +18,7 @@ const TodoForm = ({newTodo, setNewTodo, todos, setTodos}) => {
         ...todos
         ]);
         setNewTodo('');
-        }, [newTodo, todos]);
+    }, [newTodo, todos]);
 
     return (
         <div>

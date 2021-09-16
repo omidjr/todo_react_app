@@ -16,6 +16,7 @@
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,6 +31,7 @@
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,6 +47,7 @@
   font-size: larger;
   font-weight: bold;
   border-radius: 5px;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,6 +63,7 @@
   border-radius: 5px;
   cursor: none;
   pointer-events: none;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
