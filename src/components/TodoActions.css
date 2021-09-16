@@ -4,9 +4,11 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin-bottom: 1em;
 }
 
 .todoActions_done {
+  transition: all 0.3s ease;
   padding: 15px 15px;
   color: #eeeeee;
   background-color: #e94560;
@@ -14,14 +16,13 @@
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
-  outline: none;
-  border: none;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .todoActions_delete {
+  transition: all 0.3s ease;
   padding: 15px 15px;
   color: #e94560;
   background-color: transparent;
@@ -29,8 +30,36 @@
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
-  outline: none;
-  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todoActions_done_disabled {
+  transition: all 0.3s ease;
+  padding: 15px 15px;
+  color: #eeeeee;
+  background-color: #3f434b;
+  pointer-events: none;
+  cursor: none;
+  font-size: larger;
+  font-weight: bold;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todoActions_delete_disabled {
+  transition: all 0.3s ease;
+  padding: 15px 15px;
+  color: #3f434b;
+  background-color: transparent;
+  font-size: larger;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: none;
+  pointer-events: none;
   display: flex;
   justify-content: center;
   align-items: center;

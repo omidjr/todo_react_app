@@ -19,8 +19,8 @@ const TodoActions = ({todos, setTodos}) => {
 
     return (
         <div className='todoActions'>
-            <button className='todoActions_done' onClick={markAllDone}>Mark all done</button>
-            <button className='todoActions_delete' onClick={deleteAllTodos}>Delete all Todos</button>
+            <div className={todos.length !== 0 ? 'todoActions_done' : 'todoActions_done_disabled'} onClick={markAllDone}>Mark all done</div>
+            <div className={todos.length !== 0 ? 'todoActions_delete' : 'todoActions_delete_disabled'} onClick={deleteAllTodos}>Delete all Todos</div>
         </div>
     )
 }
