@@ -43,6 +43,34 @@
   justify-content: center;
 }
 
+.todoCheck input[type="checkbox"] {
+  transition: all 0.3s ease-out;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: solid 3px #e94560;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todoCheck input[type="checkbox"]::after {
+  content: url("../img/check.svg");
+  display: none;
+}
+
+.todoCheck input[type="checkbox"]:checked {
+  background-color: #e94560;
+}
+
+.todoCheck input[type="checkbox"]:checked::after {
+  display: block;
+}
+
 .todoNameAndActions {
   width: 100%;
   display: flex;
