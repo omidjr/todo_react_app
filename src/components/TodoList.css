@@ -34,7 +34,7 @@
 }
 
 .todoCheck {
-  width: 60px;
+  width: 70px;
   height: 100%;
   background-color: #3f434b;
   border-radius: 15px 0px 0px 15px;
@@ -44,7 +44,7 @@
 }
 
 .todoCheck input[type="checkbox"] {
-  transition: all 0.3s ease-out;
+  transition: all 0.15s ease-out;
   appearance: none;
   -webkit-appearance: none;
   width: 20px;
@@ -71,10 +71,22 @@
   display: block;
 }
 
+.done {
+  text-decoration: line-through;
+}
+
 .todoNameAndActions {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 0 30px 0 30px;
+}
+
+.todoNameAndActions span {
+  cursor: pointer;
+}
+
+.todoNameAndActions span:nth-child(1) {
+  margin-right: 20px;
 }
