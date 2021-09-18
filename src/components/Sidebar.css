@@ -1,36 +1,41 @@
 .sideBar {
-  flex: 0.17;
-  height: calc(100vh - 50px);
+  position: absolute;
+  width: 250px;
+  height: calc(100% - 50px);
+  padding: 0 30px;
   background-color: #32363e;
   border-top: 1px solid #222831;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  left: -250px;
+  transition: all 0.5s ease;
 }
 
-.sideBar_content {
-  margin: 30px 50px 0;
+.active {
+  left: 0;
 }
 
-.sideBar_content p {
+.sideBar p {
   font-size: 1.2em;
   font-weight: bold;
 }
 
-.sideBar_content ul {
+.sideBar ul {
   list-style: none;
   margin-top: 40px;
 }
 
-.sideBar_content li {
+.sideBar li {
   display: flex;
   align-items: center;
   margin-bottom: 40px;
 }
 
-.sideBar_content li:nth-child(4) {
+.sideBar li:nth-child(4) {
   margin-bottom: 0;
 }
 
-.sideBar_content span {
+.sideBar span {
   width: 40px;
   height: 40px;
   margin-right: 17px;

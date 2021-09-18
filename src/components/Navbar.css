@@ -9,11 +9,15 @@
 }
 
 .navbarMenu {
-  margin-left: 50px;
+  margin-left: 30px;
+}
+
+.navbarMenu svg {
+  cursor: pointer;
 }
 
 .navbarIcons {
-  margin-right: 50px;
+  margin-right: 30px;
   display: flex;
   align-items: center;
 }
