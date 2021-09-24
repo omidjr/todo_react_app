@@ -23,7 +23,7 @@ const App = () => {
       <div className="App">
         <Sidebar {...showSidebar} {...newCollection} {...collections} />
         <div className="todoApp_inner">
-          <TodoForm {...newTodo} {...todos}  />
+          <TodoForm {...newTodo} {...todos} />
           <TodoList {...todos} />
           <TodoActions {...todos} />
         </div>

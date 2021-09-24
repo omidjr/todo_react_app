@@ -13,7 +13,7 @@ const TodoForm = ({newTodo, setNewTodo, todos, setTodos}) => {
         {
             id: todos.length ? todos[0].id + 1 : 1,
             content: newTodo,
-            done: false
+            done: false,
         },
         ...todos
         ]);

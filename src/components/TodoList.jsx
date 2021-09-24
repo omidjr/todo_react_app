@@ -19,7 +19,7 @@ const TodoList = ({todos, setTodos}) => {
         <div className="todoList">
             <ul>
                 {todos.map((todo, index) => (
-                    <li className="todo" key={todo.id}>
+                        <li className="todo" key={todo.id}>
                         <div className="todoCheck">
                             <input
                             type="checkbox"

@@ -1,19 +1,21 @@
 import "./Sidebar.css";
 import React, { useCallback } from 'react'
+import CollectionList from "./CollectionList";
 
 const Sidebar = ({showSidebar, newCollection, setNewCollection, collections, setCollections}) => {
     const formSubmitted = useCallback((e) => {
         e.preventDefault();
-        if (!newCollection.trim()) return; //Avoid empty todos
+        if (!newCollection.trim()) return; //Avoid empty collections
+
         setCollections([
             {
                 id: collections.length ? collections[0].id + 1 : 1,
-                content: newCollection,
+                content: newCollection.toLowerCase(),
             },
-            ...collections
+                ...collections
         ]);
         setNewCollection('');
-    }, [newCollection, collections])
+        }, [newCollection, collections]);
 
     const onNewCollectionChange = useCallback((e) => {
         setNewCollection(e.target.value);
@@ -24,19 +26,7 @@ const Sidebar = ({showSidebar, newCollection, setNewCollection, collections, set
             <p>
                 Collections
             </p>
-            <ul>
-                {collections.map((collection) => (
-                    <li className="collection" key={collection.id}>
-                        <span >
-                            <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M11.4 1L4.25 8.2L1 4.92727" stroke="#EEEEEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </span>
-                        {collection.content}
-                    </li>
-                ))
-                }
-            </ul>
+            <CollectionList collections={collections} setCollections={setCollections} setNewCollection={setNewCollection} />
             <form className="addCollection_form" onSubmit={formSubmitted}>
                 <input
                     className="addCollection_input"
