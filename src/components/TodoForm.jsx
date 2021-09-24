@@ -1,7 +1,7 @@
 import "./TodoForm.css";
 import {React, useCallback} from 'react'
 
-const TodoForm = ({newTodo, setNewTodo, todos, setTodos}) => {
+const TodoForm = ({newTodo, setNewTodo, todos, setTodos, chosenCollection}) => {
     const onNewTodoChange = useCallback((e) => {
         setNewTodo(e.target.value);
     }, []);
@@ -14,6 +14,7 @@ const TodoForm = ({newTodo, setNewTodo, todos, setTodos}) => {
             id: todos.length ? todos[0].id + 1 : 1,
             content: newTodo,
             done: false,
+            collection: chosenCollection
         },
         ...todos
         ]);

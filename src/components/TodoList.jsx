@@ -1,7 +1,7 @@
 import "./TodoList.css";
 import {React, useCallback} from 'react'
 
-const TodoList = ({todos, setTodos}) => {
+const TodoList = ({todos, setTodos, chosenCollection}) => {
     const todoDone = useCallback((todo, index) => (e) => {
         const newTodos = [...todos];
         newTodos.splice(index, 1, {
@@ -11,6 +11,10 @@ const TodoList = ({todos, setTodos}) => {
         setTodos(newTodos);
     }, [todos]);
 
+    const editTodo = useCallback((todo) => (e) => {
+        console.log(todo);
+    })
+
     const removeTodo = useCallback((todo) => (e) => {
         setTodos(todos.filter(otherTodo => otherTodo !== todo));
     }, [todos]);
@@ -18,7 +22,8 @@ const TodoList = ({todos, setTodos}) => {
     return (
         <div className="todoList">
             <ul>
-                {todos.map((todo, index) => (
+                {todos.map((todo, index) => 
+                    {return todo.collection === chosenCollection ? (
                         <li className="todo" key={todo.id}>
                         <div className="todoCheck">
                             <input
@@ -30,7 +35,7 @@ const TodoList = ({todos, setTodos}) => {
                         <div className="todoNameAndActions">
                             <p className={todo.done ? 'done' : ''}>{todo.content}</p>
                             <div>
-                                <span onClick={removeTodo(todo)}>
+                                <span onClick={editTodo(todo)}>
                                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 17.416V22H4.58397L18.1097 8.47423L13.5258 3.89026L0 17.416ZM21.6425 4.94152C22.1192 4.46479 22.1192 3.68857 21.6425 3.21184L18.7882 0.35755C18.3114 -0.119183 17.5352 -0.119183 17.0585 0.35755L14.8215 2.59453L19.4055 7.1785L21.6425 4.94152Z" fill="#E94560"/>
                                     </svg>
@@ -44,7 +49,11 @@ const TodoList = ({todos, setTodos}) => {
                             </div>
                         </div>
                     </li>
-                ))}
+                    ) : (
+                        <li style={{display: 'none'}} />
+                    )}
+                    
+                )}
             </ul>
         </div>
     )
