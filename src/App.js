@@ -22,7 +22,7 @@ const App = () => {
 
   return (
     <div>
-      <Navbar {...showSidebar} />
+      <Navbar {...showSidebar} {...newTodo} {...todos} {...chosenCollection} />
       <div className="App">
         <Sidebar {...showSidebar} {...newCollection} {...collections} {...chosenCollection} />
         <div className="todoApp_inner">

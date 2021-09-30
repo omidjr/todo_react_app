@@ -38,6 +38,16 @@
   margin-right: 25px;
 }
 
+.navAddTodo_btn_disabled {
+  background: #222831;
+  pointer-events: none;
+  outline: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .navbarIcons span {
   margin-right: 25px;
   cursor: pointer;

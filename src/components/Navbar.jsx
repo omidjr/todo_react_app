@@ -1,7 +1,9 @@
 import './Navbar.css';
-import React, { useCallback } from 'react'
+import React, { useCallback, useState } from 'react'
+import { NavbarAddTodo } from './NavbarAddTodo';
 
-const Navbar = ({showSidebar, setShowSidebar}) => {
+const Navbar = ({todos, setTodos, newTodo, setNewTodo, chosenCollection, showSidebar, setShowSidebar}) => {
+    const [addModal, setAddModal] = useState(false);
 
     const sidebarToggle = useCallback(() => {
         setShowSidebar(!showSidebar);
@@ -17,12 +19,21 @@ const Navbar = ({showSidebar, setShowSidebar}) => {
                 </span>
             </div>
             <div className="navbarIcons">
-                <button className="addTodo_btn nav_btn">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 1V17" stroke="#EEEEEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M1 9H17" stroke="#EEEEEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
+                {chosenCollection ? (
+                    <button className="addTodo_btn nav_btn" onClick={() => setAddModal(true)}>
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 1V17" stroke="#EEEEEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M1 9H17" stroke="#EEEEEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                ) : (
+                    <button className="navAddTodo_btn_disabled nav_btn">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 1V17" stroke="#EEEEEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M1 9H17" stroke="#EEEEEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                )}
                 <span>
                 <svg width="20" height="25" viewBox="0 0 20 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M18.9555 21.5171H1.54194C1.40701 21.5167 1.27443 21.4818 1.15678 21.4158C1.03913 21.3497 0.940327 21.2547 0.869745 21.1397C0.799163 21.0247 0.759148 20.8935 0.753501 20.7587C0.747854 20.6239 0.776762 20.4899 0.83748 20.3694C1.81412 18.401 2.32591 16.2346 2.33346 14.0372V11.2273C2.33346 9.12806 3.16739 7.11479 4.65178 5.63039C6.13618 4.146 8.14945 3.31207 10.2487 3.31207C12.348 3.31207 14.3612 4.146 15.8456 5.63039C17.33 7.11479 18.1639 9.12806 18.1639 11.2273V14.0214C18.1715 16.2188 18.6833 18.3851 19.6599 20.3536C19.7244 20.4746 19.7563 20.6103 19.7525 20.7474C19.7487 20.8845 19.7094 21.0183 19.6384 21.1356C19.5674 21.2529 19.4671 21.3497 19.3474 21.4166C19.2276 21.4835 19.0926 21.5181 18.9555 21.5171V21.5171ZM2.7688 19.9341H17.7286C16.9738 18.054 16.5843 16.0473 16.5809 14.0214V11.2273C16.5809 9.54791 15.9138 7.93729 14.7262 6.74978C13.5387 5.56226 11.9281 4.89512 10.2487 4.89512C8.5693 4.89512 6.95868 5.56226 5.77116 6.74978C4.58365 7.93729 3.91651 9.54791 3.91651 11.2273V14.0214C3.91313 16.0473 3.5236 18.054 2.7688 19.9341V19.9341Z" fill="#EEEEEE"/>
@@ -38,6 +49,7 @@ const Navbar = ({showSidebar, setShowSidebar}) => {
                 </span>
                 <div className="profile" />
             </div>
+            {addModal ? <NavbarAddTodo todos={todos} setTodos={setTodos} newTodo={newTodo} setNewTodo={setNewTodo} chosenCollection={chosenCollection} setAddModal={setAddModal} /> : <div style={{display: 'none'}} />}
         </div>
     )
 }

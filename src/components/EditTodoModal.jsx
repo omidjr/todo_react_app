@@ -1,5 +1,5 @@
-import { useCallback, useState, useRef, useEffect } from "react";
 import "./EditTodoModal.css";
+import { useCallback, useState, useRef, useEffect } from "react";
 
 const EditTodoModal = ({setModal, chosenTodo}) => {
     const [editedTodo, setEditedTodo] = useState('')
