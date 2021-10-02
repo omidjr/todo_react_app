@@ -52,3 +52,20 @@
   margin-right: 25px;
   cursor: pointer;
 }
+
+.navbar_sm {
+  position: absolute;
+  bottom: 0;
+  background-color: #32363e;
+  border-top: 1px solid #222831;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 10;
+}
+
+.navbar_sm .nav_btn {
+  margin-right: 0;
+}

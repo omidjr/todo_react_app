@@ -2,7 +2,7 @@ import "./Sidebar.css";
 import React, { useCallback } from 'react'
 import CollectionList from "./CollectionList";
 
-const Sidebar = ({showSidebar, newCollection, setNewCollection, collections, setCollections, setChosenCollection}) => {
+const Sidebar = ({showSidebar, setShowSidebar, newCollection, setNewCollection, collections, setCollections, setChosenCollection}) => {
     const formSubmitted = useCallback((e) => {
         e.preventDefault();
         if (!newCollection.trim()) return; //Avoid empty collections
@@ -26,7 +26,7 @@ const Sidebar = ({showSidebar, newCollection, setNewCollection, collections, set
             <p>
                 Collections
             </p>
-            <CollectionList collections={collections} setCollections={setCollections} setNewCollection={setNewCollection} setChosenCollection={setChosenCollection} />
+            <CollectionList collections={collections} setCollections={setCollections} setNewCollection={setNewCollection} setChosenCollection={setChosenCollection} setShowSidebar={setShowSidebar} />
             <form className="addCollection_form" onSubmit={formSubmitted}>
                 <input
                     className="addCollection_input"

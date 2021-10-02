@@ -68,3 +68,19 @@
   justify-content: center;
   align-items: center;
 }
+
+@media screen and (max-width: 576px) {
+  .todoActions {
+    width: 90%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .todoActions_done,
+  .todoActions_delete,
+  .todoActions_done_disabled,
+  .todoActions_delete_disabled {
+    padding: 10px 10px;
+    font-size: medium;
+  }
+}

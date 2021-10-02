@@ -90,3 +90,39 @@
 .todoNameAndActions span:nth-child(1) {
   margin-right: 20px;
 }
+
+@media screen and (max-width: 576px) {
+  .todoList {
+    min-height: 238px;
+    margin-bottom: 1.5em;
+  }
+
+  .todo {
+    height: 45px;
+    border-radius: 8px;
+  }
+
+  .todo p {
+    font-size: 1.1rem;
+  }
+
+  .todoCheck {
+    width: 55px;
+    border-radius: 8px 0px 0px 8px;
+  }
+
+  .todoCheck input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    border: solid 2px #e94560;
+    border-radius: 3px;
+  }
+
+  .todoNameAndActions {
+    margin: 0 20px 0 20px;
+  }
+
+  .todoNameAndActions_actions svg {
+    width: 17px;
+  }
+}

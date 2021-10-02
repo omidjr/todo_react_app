@@ -2,3 +2,10 @@
   font-size: 2rem;
   margin-top: 40px;
 }
+
+@media screen and (max-width: 576px) {
+  .todoCollectionName {
+    font-size: 1.7rem;
+    margin-top: 20px;
+  }
+}

@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 
-const CollectionList = ({setNewCollection, collections, setCollections, setChosenCollection}) => {
+const CollectionList = ({setNewCollection, collections, setCollections, setChosenCollection, setShowSidebar}) => {
 
     const collectionsArr = collections.map((c) => { return c.content });
     const isDuplicate = collectionsArr.some((c, idx) => { 
@@ -18,7 +18,7 @@ const CollectionList = ({setNewCollection, collections, setCollections, setChose
     return (
         <ul>
                 {collections.map((collection) => (
-                    <li className="collection" key={collection.id} onClick={() => setChosenCollection(collection.content)}>
+                    <li className="collection" key={collection.id} onClick={() => {setChosenCollection(collection.content); setShowSidebar(false)}}>
                         <span>
                             <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.4 1L4.25 8.2L1 4.92727" stroke="#EEEEEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
