@@ -1,5 +1,3 @@
-import { useCallback } from "react";
-
 const CollectionList = ({setNewCollection, collections, setCollections, setChosenCollection, setShowSidebar}) => {
 
     const collectionsArr = collections.map((c) => { return c.content });
